@@ -162,7 +162,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="text-black py-4 text-lg">
+          <div className="text-black py-4 text-lg text-center">
             There is no contact available in this list. Please try to add them, thank you!
           </div>
         )}
