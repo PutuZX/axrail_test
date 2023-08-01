@@ -40,10 +40,16 @@ export default function New() {
           <input
             type="tel"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => {
+              const regEx = /^[0-9-+]*$/;
+              if (e.target.value === "" || regEx.test(e.target.value)) {
+                setPhone(e.target.value);
+              }
+            }}
             placeholder="Input Your Phone Number"
             className="border-2 border-[#624696] h-12 rounded-xl p-4 text-center"
           />
+
           <div className="pt-4">
             <button
               onClick={addContact}

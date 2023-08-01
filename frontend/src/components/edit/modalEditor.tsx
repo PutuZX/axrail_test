@@ -28,7 +28,12 @@ const ModalEditor: React.FC<{
         <input
           type="tel"
           value={newPhone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => {
+            const regEx = /^[0-9-+]*$/;
+            if (e.target.value === "" || regEx.test(e.target.value)) {
+              setPhone(e.target.value);
+            }
+          }}
           placeholder="Input your phone number"
           className="border-2 border-[#656ED3] h-12 rounded-xl p-4 text-center"
         />
